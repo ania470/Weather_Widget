@@ -1,16 +1,30 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from 'assets/styles/GlobalStyles';
+import { WeatherWidget } from 'components/WeatherWidget';
+import { theme } from 'assets/styles/theme';
+import img from 'assets/images/sky-bg.png';
 
 const Wrapper = styled.div`
-    background: red;
+  padding: 40px 20px;
+  width: 600px;
+  height: 300px;
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  border-radius: 15px;
 `;
 
 function App() {
-    return (
-        <Wrapper>
-            <p>test</p>
-        </Wrapper>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Wrapper>
+        <WeatherWidget />
+      </Wrapper>
+    </ThemeProvider>
+  );
 }
 
 export default App;
