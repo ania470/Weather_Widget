@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Getting Started with Weather Widget
+
+### Place this variable inside your .env.development.local
+
+    REACT_APP_WEATHER_API_KEY
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
