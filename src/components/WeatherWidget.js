@@ -36,7 +36,7 @@ export const WeatherWidget = () => {
 
   const getWeather = (location) => {
     const BASE_URL = 'https://api.openweathermap.org';
-    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+    const API_KEY = String(process.env.REACT_APP_WEATHER_API_KEY);
 
     let queryUrl = location
       ? `${BASE_URL}/data/2.5/weather?lat=${location.lat}&lon=${
