@@ -1,0 +1,32 @@
+export const data = {
+  base: 'stations',
+  clouds: { all: 0 },
+  cod: 200,
+  coord: { lon: 22.23, lat: 50.0632 },
+  lat: 50.0632,
+  lon: 22.23,
+  dt: 1647440140,
+  id: 766810,
+  main: {
+    temp: 11.4,
+    feels_like: 9.48,
+    temp_min: 9.55,
+    temp_max: 11.93,
+    pressure: 1024,
+    humidity: 34,
+  },
+  name: 'Łańcut MSW',
+  sys: {
+    type: 2,
+    id: 19358,
+    country: 'PL',
+    sunrise: 1647405791,
+    sunset: 1647448588,
+  },
+  timezone: 3600,
+  visibility: 10000,
+  weather: [
+    { id: 800, main: 'Clear', description: 'bezchmurnie', icon: '01d' },
+  ],
+  wind: { speed: 4.12, deg: 40 },
+};

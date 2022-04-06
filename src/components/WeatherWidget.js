@@ -5,6 +5,7 @@ import { Button } from 'components/Button';
 import { ChooseCityInput } from 'components/ChooseCityInput';
 import { useDidMountEffect } from 'helpers/helpers';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 const Navigation = styled.div`
   display: flex;
@@ -44,14 +45,20 @@ export const WeatherWidget = () => {
         }&lang=${language.toLowerCase()}&appid=${API_KEY}&units=metric`
       : `${BASE_URL}/data/2.5/weather?q=${city}&lang=${language.toLowerCase()}&appid=${API_KEY}&units=metric`;
 
-    fetch(queryUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
+    // fetch(queryUrl)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setData(data);
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //   });
+    axios
+      .get(queryUrl)
+      .then((response) => {
+        setData(response.data);
       })
-      .catch((e) => {
-        console.log(e);
-      });
+      .catch((error) => console.log(error));
   };
   return (
     <>

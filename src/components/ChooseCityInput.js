@@ -32,31 +32,30 @@ const WeatherInfoError = styled.p`
   width: fit-content;
 `;
 
-export const ChooseCityInput = ({
-  onChange,
-  setMyLocation,
-  dataStatus = 200,
-  transKey,
-}) => {
-  const { t } = useTranslation();
-  const getLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setMyLocation({
-        lat: position.coords.latitude,
-        long: position.coords.longitude,
+export const ChooseCityInput = React.forwardRef(
+  ({ onChange, setMyLocation, dataStatus = 200, transKey }, ref) => {
+    const { t } = useTranslation();
+    const getLocation = () => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setMyLocation({
+          lat: position.coords.latitude,
+          long: position.coords.longitude,
+        });
       });
-    });
-  };
+    };
 
-  return (
-    <InputWrapper>
-      <StyledInput
-        type="text"
-        placeholder={t('InputPlaceholder')}
-        onChange={(e) => onChange(e)}
-      />
-      <GpsIcon onClick={getLocation} />
-      {dataStatus !== 200 && <WeatherInfoError>{t(transKey)}</WeatherInfoError>}
-    </InputWrapper>
-  );
-};
+    return (
+      <InputWrapper>
+        <StyledInput
+          type="text"
+          placeholder={t('InputPlaceholder')}
+          onChange={(e) => onChange(e)}
+        />
+        <GpsIcon onClick={getLocation} />
+        {dataStatus !== 200 && (
+          <WeatherInfoError>{t(transKey)}</WeatherInfoError>
+        )}
+      </InputWrapper>
+    );
+  }
+);

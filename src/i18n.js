@@ -44,7 +44,7 @@ const resources = {
       MinTemp: 'Min temp.',
       Humidity: 'Feuchtigkeit',
       ShowMore: 'Zeig mehr',
-      ShowLess: 'zeige weniger',
+      ShowLess: 'Zeige weniger',
     },
   },
 };
