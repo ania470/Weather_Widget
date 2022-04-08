@@ -20,6 +20,10 @@ const StyledInput = styled.input`
 `;
 const InputWrapper = styled.div`
   position: relative;
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    display: flex;
+    margin: 10px 0;
+  } ;
 `;
 const WeatherInfoError = styled.p`
   margin: 0 auto;
@@ -30,6 +34,9 @@ const WeatherInfoError = styled.p`
   left: 50%;
   transform: translateX(-50%);
   width: fit-content;
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    top: 27px;
+  } ;
 `;
 
 export const ChooseCityInput = ({

@@ -9,11 +9,18 @@ import { useTranslation } from 'react-i18next';
 const Navigation = styled.div`
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    display: block;
+  } ;
 `;
 const Sections = styled.div`
   height: 30px;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    display: block;
+  } ;
 `;
 
 export const WeatherWidget = () => {
@@ -75,7 +82,9 @@ export const WeatherWidget = () => {
             language={language}
             transKey={data && data.message}
           />
-          <Button onClick={handleWeather}>{t('ButtonName')}</Button>
+          <Button onClick={handleWeather} searchBtn>
+            {t('ButtonName')}
+          </Button>
         </Sections>
       </Navigation>
       {data && data.cod === 200 && <WeatherInfo data={data} />}
