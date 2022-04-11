@@ -10,7 +10,7 @@ export const theme = {
     small: '12px',
   },
   breakpoints: {
-    sm: 375,
+    sm: 550,
     md: 768,
     lg: 1024,
     xl: 1280,

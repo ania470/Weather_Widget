@@ -13,11 +13,11 @@ const DetailsInfoWeather = styled.div`
   p {
     font-size: 14px;
     font-weight: bold;
+    text-align: left;
     @media only screen and (max-width: ${({ theme }) =>
         theme.breakpoints.sm}px) {
       font-size: 12px;
       width: 95%;
-      text-align: left;
     }
   }
   span {

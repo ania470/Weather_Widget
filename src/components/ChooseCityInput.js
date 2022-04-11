@@ -17,6 +17,9 @@ const StyledInput = styled.input`
   ::placeholder {
     color: #111c46;
   }
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    width: 100%;
+  } ;
 `;
 const InputWrapper = styled.div`
   position: relative;

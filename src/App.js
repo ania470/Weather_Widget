@@ -7,18 +7,14 @@ import img from 'assets/images/sky-bg.png';
 
 const Wrapper = styled.div`
   padding: 40px 20px;
-  width: 600px;
+  box-sizing: border-box;
   min-height: 300px;
   background-image: url(${img});
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: center;
   border-radius: 15px;
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    width: 90%;
-    margin: auto;
-    padding: 15px;
-  } ;
+  margin-top: 150px;
 `;
 
 function App() {
