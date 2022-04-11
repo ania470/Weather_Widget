@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { WeatherInfo } from 'components/WeatherInfo';
 import { Button } from 'components/Button';
 import { ChooseCityInput } from 'components/ChooseCityInput';
+import { DataLoader } from './DataLoader';
 import { useDidMountEffect } from 'helpers/helpers';
 import { useTranslation } from 'react-i18next';
 
@@ -29,6 +30,7 @@ export const WeatherWidget = () => {
   const [data, setData] = useState();
   const [myLocation, setMyLocation] = useState(false);
   const { t, i18n } = useTranslation();
+  const [showLoader, setShowLoader] = useState(false);
 
   useDidMountEffect(() => {
     myLocation && getWeather(myLocation);
@@ -44,6 +46,7 @@ export const WeatherWidget = () => {
   const getWeather = (location) => {
     const BASE_URL = 'https://api.openweathermap.org';
     const API_KEY = String(process.env.REACT_APP_WEATHER_API_KEY);
+    setShowLoader(true);
 
     let queryUrl = location
       ? `${BASE_URL}/data/2.5/weather?lat=${location.lat}&lon=${
@@ -55,6 +58,7 @@ export const WeatherWidget = () => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        setShowLoader(false);
       })
       .catch((e) => {
         console.log(e);
@@ -88,6 +92,7 @@ export const WeatherWidget = () => {
         </Sections>
       </Navigation>
       {data && data.cod === 200 && <WeatherInfo data={data} />}
+      {showLoader && <DataLoader />}
     </>
   );
 };

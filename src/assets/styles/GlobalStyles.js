@@ -6,4 +6,5 @@ body {
     max-width: 600px;
     margin: 0 auto;
     background-color: #bfdbec;
+    position: relative;
  `;

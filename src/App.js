@@ -15,6 +15,9 @@ const Wrapper = styled.div`
   justify-content: center;
   border-radius: 15px;
   margin-top: 150px;
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+    margin-top: 50px;
+  } ;
 `;
 
 function App() {
