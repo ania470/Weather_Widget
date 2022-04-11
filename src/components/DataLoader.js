@@ -10,7 +10,6 @@ const LoaderElement = styled.div`
 `;
 
 export const DataLoader = () => {
-  // if (true) {
   return (
     <LoaderElement className={'item'}>
       <Loader
@@ -21,6 +20,4 @@ export const DataLoader = () => {
       />
     </LoaderElement>
   );
-  // }
-  // return null;
 };
